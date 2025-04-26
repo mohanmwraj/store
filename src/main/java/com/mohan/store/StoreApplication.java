@@ -1,6 +1,7 @@
 package com.mohan.store;
 
 import com.mohan.store.Entity.Address;
+import com.mohan.store.Entity.Tag;
 import com.mohan.store.Entity.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -28,6 +29,9 @@ public class StoreApplication {
 							.build();
 
 		user.addAddress(address);
+
+		user.addTag("tag1");
+
 		System.out.println(user);
 	}
 

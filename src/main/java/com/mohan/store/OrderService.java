@@ -6,13 +6,13 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 //@Component
-@Service
+//@Service
 public class OrderService {
     private PaymentService paymentService;
 
     public OrderService() {}
 
-    @Autowired
+    //@Autowired
     public OrderService(@Qualifier("stripe") PaymentService paymentService) {
         this.paymentService = paymentService;
     }

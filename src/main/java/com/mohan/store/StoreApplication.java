@@ -1,5 +1,6 @@
 package com.mohan.store;
 
+import com.mohan.store.Entity.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -12,6 +13,11 @@ public class StoreApplication {
 		var orderService = context.getBean(OrderService.class);
 		orderService.placeOrder();
 
+		var user = User.builder()
+						.name("Mohan")
+						.password("password")
+						.email("mohan@gmail.com")
+						.build();
 	}
 
 }

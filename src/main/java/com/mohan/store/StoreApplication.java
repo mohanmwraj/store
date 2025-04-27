@@ -1,6 +1,7 @@
 package com.mohan.store;
 
 import com.mohan.store.Entity.Address;
+import com.mohan.store.Entity.Profile;
 import com.mohan.store.Entity.Tag;
 import com.mohan.store.Entity.User;
 import org.springframework.boot.SpringApplication;
@@ -31,6 +32,13 @@ public class StoreApplication {
 		user.addAddress(address);
 
 		user.addTag("tag1");
+
+		var profile = Profile.builder()
+								.bio("bio")
+								.build();
+
+		user.setProfile(profile);
+		profile.setUser(user);
 
 		System.out.println(user);
 	}

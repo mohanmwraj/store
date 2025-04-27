@@ -1,4 +1,4 @@
-package com.mohan.store.Entity;
+package com.mohan.store.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -16,6 +16,9 @@ public class Product {
     @Column(name = "id")
     private Long id;
 
+    @Column(name = "description")
+    private String description;
+
     @Column(name = "name")
     private String name;
 
@@ -25,4 +28,5 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
+
 }

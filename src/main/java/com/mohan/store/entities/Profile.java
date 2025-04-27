@@ -1,4 +1,4 @@
-package com.mohan.store.Entity;
+package com.mohan.store.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -33,6 +33,5 @@ public class Profile {
     @OneToOne
     @JoinColumn(name = "id")
     @MapsId
-    @ToString.Exclude
     private User user;
 }

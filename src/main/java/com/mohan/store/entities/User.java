@@ -1,4 +1,4 @@
-package com.mohan.store.Entity;
+package com.mohan.store.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -28,7 +28,7 @@ public class User {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "password")
+    @Column(name = "passwords")
     private String password;
 
     @OneToMany(mappedBy = "user")
@@ -68,4 +68,12 @@ public class User {
 
     @OneToOne(mappedBy = "user")
     private Profile profile;
+
+    @ManyToMany
+    @JoinTable(
+            name = "wishlist",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id")
+    )
+    private Set<Product> wishlist = new HashSet<>();
 }
